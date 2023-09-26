@@ -1,0 +1,422 @@
+package com.pack1;
+
+import java.util.Scanner;
+public class Project_01 
+{
+	static int prize=0;
+	static int VPrize;
+	static int FPrize;
+	static int MPrize;
+	static int EPrize;
+	static int CsPrize;
+	static int ClPrize;
+	static int Clcode;
+	static int Quantity=0;
+	
+	
+	Scanner sc=new Scanner(System.in);
+	void grocList()
+	{
+		System.out.println("**	1 : Fruits		**");
+		System.out.println("**	2 : Vegitables		**");
+		System.out.println("**	3 : Masla Powders	**");
+		System.out.println("**	4 : Electronics		**");
+		System.out.println("**	5 : Cosmatics		**");
+		System.out.println("**	6 : Clothes		**");
+		System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+		new Project_01().List();
+		
+	}
+	void List()
+	{
+		System.out.println("Please Enter Your Choise Number ");
+		int ChoiseNum=sc.nextInt();
+		if((ChoiseNum>=1)&&(ChoiseNum<=6))
+		{
+			switch(ChoiseNum)
+			{
+			case 1 :
+				System.out.println("You Chose Fruits that's great");
+				System.out.println();
+				System.out.println("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
+
+				System.out.println("301--------------Mangoes-----------80 Rs per Kg");
+				System.out.println("302--------------Apples-----------150 Rs per Kg");
+				System.out.println("303--------------Oranges-----------120 Rs per Kg");
+				System.out.println("304--------------Papaya-----------60 Rs per Kg");
+				System.out.println("305--------------Grapes-----------110 Rs per Kg");
+				System.out.println("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
+				new Project_01().Fruits();
+				break;
+			case 2 :
+				System.out.println("You chose 'Vegetables' that's good");
+				System.out.println();
+				System.out.println("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
+
+				System.out.println("401--------------Potatos-----------30 Rs per Kg");
+				System.out.println("402--------------Tomatos-----------70 per KgRs ");
+				System.out.println("403--------------Onions-----------40 Rs per Kg");
+				System.out.println("404--------------Cucumber-----------50 Rs per Kg");
+				System.out.println("405--------------Ginger-----------250 Rs per Kg");
+				System.out.println("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
+				Vegetables();
+				break;
+			case 3 :
+				System.out.println("You chose 'Masala Powders' that's awesome");
+				System.out.println();
+				System.out.println("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
+
+				System.out.println("501--------------Sabji Masala-----------35 Rs for one pack");
+				System.out.println("502--------------Chicken Masala-----------45 Rs for one pack");
+				System.out.println("503--------------Mirch Masala-----------30 Rs for one pack");
+				System.out.println("504--------------Haldi Powder-----------60 Rs for one pack");
+				System.out.println("505--------------Namak-----------20 Rs for one pack");
+				System.out.println("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
+				MasalaPowder();
+				break;
+			case 4 :
+				System.out.println("You chose 'Electronics' that's nice");
+				System.out.println();
+				System.out.println("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
+
+				System.out.println("601--------------T.V-----------20,000 Rs ");
+				System.out.println("602--------------Refrigerator*-----------18,000 Rs ");
+				System.out.println("603--------------Smart Watches-----------3,000 Rs ");
+				System.out.println("604--------------Washing Machine-----------15,000 Rs ");
+				System.out.println("605--------------Stand Fan-----------4,000 Rs ");
+				System.out.println("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
+				Electronics();
+				break;
+			case 5 :
+				System.out.println("You chose 'Cosmatics' that's great");
+				System.out.println();
+				System.out.println("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
+
+				System.out.println("701--------------Face Wash-----------300 Rs ");
+				System.out.println("702--------------Eye Liner-----------150 Rs ");
+				System.out.println("703--------------Body Lotion-----------400 Rs ");
+				System.out.println("704--------------Mostuorizer-----------250 Rs ");
+				System.out.println("705--------------Lipsticks-----------350 Rs ");
+				System.out.println("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
+				Cosmatics();
+				break;
+			case 6 :
+				System.out.println("You chose 'Clothes' that's fascinating");
+				System.out.println();
+				System.out.println("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
+
+				System.out.println("801--------------Jeans Paints-----------2,500 Rs ");
+				System.out.println("802--------------Shirts-----------2,000 Rs ");
+				System.out.println("803--------------Sarees-----------5,000 Rs ");
+				System.out.println("804--------------Dresses-----------4,000 Rs ");
+				System.out.println("805--------------Lungies-----------500 Rs ");
+				System.out.println("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
+				Clothes();
+				break;
+			}
+		}
+		else
+		{
+			System.out.println("You have entered INVALID choise");
+			System.out.println("Please enter VALID choise number");
+			grocList();
+		}
+	}
+	static String FName;
+	void Fruits()
+	{
+		String arrF[]= {"Mangos","Apples","Orange","Papaya","Grapes"};
+		int FarrP[]= {80,150,120,60,110};
+		System.out.println("Please Enter your desirable fruit code number");
+		int fcode=sc.nextInt();
+		if ((fcode>=301)&&(fcode<=305))
+		{
+			System.out.println(arrF[fcode-301]+" is a great choise !!! How many kgs you want to buy?");
+			int FKgs=sc.nextInt();
+			FPrize=FarrP[fcode-301]*FKgs;
+			FName=arrF[fcode-301];
+			prize=prize+FarrP[fcode-301]*FKgs;
+			System.out.println("Your "+arrF[fcode-301]+"'s bill is "+FPrize);
+			System.out.println("Enter '1' for continue and '2' for exit");
+			int conty=sc.nextInt();
+			if(conty==1)
+			{
+				Quantity++;
+				buyedProd[Quantity-1]=FName;
+				buyedProdPrize[Quantity-1]=FPrize;
+				grocList();
+			}
+			else if(conty==2)
+			{
+				Quantity=Quantity+1;
+				buyedProd[Quantity-1]=FName;
+				buyedProdPrize[Quantity-1]=FPrize;
+				FBill();
+			}
+			else
+				System.out.println("Abe Gandu!! [You have only two options either 1 or 2] Now Run the Code Again..");
+		}
+		else
+		{
+			System.out.println("You have entered INVALID input");
+
+			Fruits();
+		}
+	}
+	static String VName;
+	void Vegetables()
+	{
+		String arrV[]= {"Potato","Tomato","Onion","Cucumber","Ginger"};
+		int FarrP[]= {30,70,40,50,250};
+		System.out.println("Please Enter your desirable Vegetable code number");
+		int fcode=sc.nextInt();
+		if ((fcode>=401)&&(fcode<=405))
+		{
+			System.out.println(arrV[fcode-401]+" is a great choise !!! How many kgs you want to buy?");
+			int VKgs=sc.nextInt();
+			VPrize=(FarrP[fcode-401]*VKgs);
+			VName=arrV[fcode-401];
+			prize=prize+FarrP[fcode-401]*VKgs;
+			System.out.println("Your "+arrV[fcode-401]+"'s bill is "+VPrize);
+			System.out.println("Enter '1' for continue and '2' for exit");
+			int conty=sc.nextInt();
+			if(conty==1)
+			{
+				Quantity++;
+				buyedProd[Quantity-1]=VName;
+				buyedProdPrize[Quantity-1]=VPrize;
+				grocList();
+			}
+			else if(conty==2)
+			{
+				Quantity=Quantity+1;
+				buyedProd[Quantity-1]=VName;
+				buyedProdPrize[Quantity-1]=VPrize;
+				FBill();
+			}
+			else
+				System.out.println("Abe Gandu!! [You have only two options either 1 or 2] Now Run the Code Again..");
+		}
+		else
+		{
+			System.out.println("You have entered INVALID input");
+
+			Vegetables();
+		}
+	}
+	static String MName;
+	void MasalaPowder()
+	{
+		String arrM[]= {"Sabji Masala","Chicken Masala","Mirch Poweder","Haldi Powder","Namak"};
+		int FarrP[]= {35,45,30,60,20};
+		System.out.println("Please Enter your desirable Masala Poweder code number");
+		int fcode=sc.nextInt();
+		if ((fcode>=501)&&(fcode<=505))
+		{
+			System.out.println(arrM[fcode-501]+" is a great choise !!! How many packets you want to buy?");
+			int MPcs=sc.nextInt();
+			MPrize=(FarrP[fcode-501]*MPcs);
+			MName=arrM[fcode-501];
+			prize=prize+FarrP[fcode-501]*MPcs;
+			System.out.println("Your "+arrM[fcode-501]+"'s bill is "+MPrize);
+			System.out.println("Enter '1' for continue and '2' for exit");
+			int conty=sc.nextInt();
+			if(conty==1)
+			{
+				Quantity++;
+				buyedProd[Quantity-1]=MName;
+				buyedProdPrize[Quantity-1]=MPrize;
+				grocList();
+			}
+			else if(conty==2)
+			{
+				Quantity=Quantity+1;
+				buyedProd[Quantity-1]=MName;
+				buyedProdPrize[Quantity-1]=MPrize;
+				FBill();
+			}
+			else
+				System.out.println("Abe Gandu!! [You have only two options either 1 or 2] Now Run the Code Again..");
+		}
+		else
+		{
+			System.out.println("You have entered INVALID input");
+
+			MasalaPowder();
+		}
+	}
+	static String EName;
+	void Electronics()
+	{
+		String arrE[]= {"T.V","Refregrator","Smart Watches","Washing Machine","Stand Fan"};
+		int FarrP[]= {20000,18000,3000,15000,4000};
+		System.out.println("Please Enter your desirable Electronics code number");
+		int fcode=sc.nextInt();
+		if ((fcode>=601)&&(fcode<=605))
+		{
+			System.out.println(arrE[fcode-601]+" is a great choise !!! How many products you want to buy?");
+			int EPcs=sc.nextInt();
+			EPrize=(FarrP[fcode-601]*EPcs);
+			EName=arrE[fcode-601];
+			prize=prize+FarrP[fcode-601]*EPcs;
+			System.out.println("Your "+arrE[fcode-601]+"'s bill is "+EPrize);
+			System.out.println("Enter '1' for continue and '2' for exit");
+			int conty=sc.nextInt();
+			if(conty==1)
+			{
+				Quantity++;
+				buyedProd[Quantity-1]=EName;
+				buyedProdPrize[Quantity-1]=EPrize;
+				grocList();
+			}
+			else if(conty==2)
+			{
+				Quantity=Quantity+1;
+				buyedProd[Quantity-1]=EName;
+				buyedProdPrize[Quantity-1]=EPrize;
+				FBill();
+			}
+			else
+				System.out.println("Abe Gandu!! [You have only two options either 1 or 2] Now Run the Code Again..");
+		}
+		else
+		{
+			System.out.println("You have entered INVALID input");
+
+			Electronics();
+		}
+	}
+	static String CsName;
+	void Cosmatics()
+	{
+		String arrCs[]= {"Face Wash","Eye Liner","Body Lotion","Mosturizer","Lipstick"};
+		int FarrP[]= {300,150,400,250,350};
+		System.out.println("Please Enter your desirable Cosmatics code number");
+		int fcode=sc.nextInt();
+		if ((fcode>=701)&&(fcode<=705))
+		{
+			System.out.println(arrCs[fcode-701]+" is a great choise !!! How many products you want to buy?");
+			int CsPcs=sc.nextInt();
+			CsPrize=(FarrP[fcode-701]*CsPcs);
+			CsName=arrCs[fcode-701];
+			prize=prize+FarrP[fcode-701]*CsPcs;
+			System.out.println("Your "+arrCs[fcode-701]+"'s bill is "+CsPrize);
+			System.out.println("Enter '1' for continue and '2' for exit");
+			int conty=sc.nextInt();
+			if(conty==1)
+			{
+				Quantity++;
+				buyedProd[Quantity-1]=CsName;
+				buyedProdPrize[Quantity-1]=CsPrize;
+				grocList();
+			}
+			else if(conty==2)
+			{
+				Quantity=Quantity+1;
+				buyedProd[Quantity-1]=CsName;
+				buyedProdPrize[Quantity-1]=CsPrize;
+				FBill();
+			}
+			else
+				System.out.println("Abe Gandu!! [You have only two options either 1 or 2] Now Run the Code Again..");
+		}
+		else
+		{
+			System.out.println("You have entered INVALID input");
+
+			Cosmatics();
+		}
+	}
+	
+	String arrCl[];
+	static String ClName;
+	void Clothes()
+	{
+		arrCl= new String[]{"Jeans Paint","Shirt","Saree","Dress","Lungi"};
+		int FarrP[]= {2500,2000,5000,4000,500};
+		System.out.println("Please Enter your desirable cloth code number");
+		Clcode=sc.nextInt();
+		if ((Clcode>=801)&&(Clcode<=805))
+		{
+			System.out.println(arrCl[Clcode-801]+" is a great choise !!! How many Products you want to buy?");
+			int ClPcs=sc.nextInt();
+			ClPrize=(FarrP[Clcode-801]*ClPcs);
+			ClName=arrCl[Clcode-801];
+			prize=prize+FarrP[Clcode-801]*ClPcs;
+			System.out.println("Your "+arrCl[Clcode-801]+"'s bill is "+ClPrize);
+			System.out.println("Enter '1' for continue and '2' for exit");
+			int conty=sc.nextInt();
+			if(conty==1)
+			{
+				Quantity=Quantity+1;
+				buyedProd[Quantity-1]=ClName;
+				buyedProdPrize[Quantity-1]=ClPrize;
+				grocList();
+			}
+			else if(conty==2)
+			{
+				Quantity=Quantity+1;
+				buyedProd[Quantity-1]=ClName;
+				buyedProdPrize[Quantity-1]=ClPrize;
+				FBill();
+			}
+			else
+				System.out.println("Abe Gandu!! [You have only two options either 1 or 2] Now Run the Code Again..");
+		}
+		else
+		{
+			System.out.println("You have entered INVALID input");
+
+			Clothes();
+		}
+	}
+	static String buyedProd[]=new String [30];
+	static int buyedProdPrize[]=new int [30];
+	void Product()
+	{
+		
+		for (int i = 0;i<=29;i++)
+		{
+			if(buyedProdPrize[i]!=0)
+				System.out.println( "==========>  		Prize of "+buyedProd[i]+" = "+buyedProdPrize[i]+"			<==========");
+		}
+	}
+	void FBill()
+	{
+		System.out.println("Please Enter Your name ");
+		sc.nextLine();
+		String CName=sc.nextLine();
+		System.out.println("Enter you phone number ");
+		String CPhNo=sc.next();
+		System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+		Product();
+		System.out.println("---------------------------------------------------------------");
+		System.out.println("      TOTAL :                               "+prize);
+		System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+		System.out.println();
+		System.out.println();
+		System.out.println("=+=+=+=+=+=+=+=+=+=+=+=+=+=++=+=+=+=+=+=+=+=+=++=+=+=+=++=+=+=+");
+		if(prize>=500)
+		{
+			double discount=(double)(prize*5)/100;
+			System.out.println("You save "+discount+" Rs");
+			System.out.println("Your Final Bill is "+(prize-discount)+" Rs");
+			System.out.println("Thanks a lot "+CName+" ! Have a nice day!!!");
+			System.out.println("Your contact number is "+CPhNo);
+			
+		}
+		else
+		{
+			System.out.println("Your Final Bill is "+prize+" Rs");
+			System.out.println("Thanks a lot "+CName+" ! Have a nice day!!!");
+			System.out.println("Your contact number is "+CPhNo);
+		}
+		System.out.println("=+=+=+=+=+=+=+=+=+=+=+=+=+=++=+=+=+=+=+=+=+=+=++=+=+=+=++=+=+=+");
+	}
+	 public static void main(String[] args) 
+	{
+		 System.out.println("=====>WELCOME TO KNE STORE<=====");
+		 System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+		 new Project_01().grocList();
+	}
+}
